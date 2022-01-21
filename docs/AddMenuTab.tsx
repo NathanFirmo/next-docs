@@ -7,8 +7,8 @@ The information that feeds the side menu comes from the **wiki.config.json** fil
 which is in the root of the project, so just change it to change the menu.
 
 This file has the structure shown below. For purposes of comparison, the name
-of the page group you are reading is '**About Documentation**', the name of the
-tab is '**Add a tab to the menu**' and the component name is
+of the page group you are reading is '**About this docs**', the name of the
+tab is '**Add a tab on menu**' and the component name is
 '**AddMenuTab**'.
 
 ![alert]
