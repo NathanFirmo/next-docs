@@ -1,0 +1,15 @@
+version: "2"
+services:
+  app:
+    container_name: "app"
+    restart: always
+    build: .
+    environment:
+      - BASE_URL="https://prontoemprego.com"
+      - DATABASE=prontoemprego
+      - DATABASE_USER=dhguwwb6kbdx
+      - DATABASE_HOST=3v2vb164hzib.us-east-2.psdb.cloud
+      - PASSWORD=pscale_pw_va82UPO5NICjGozY11y1rtaBtdhwKl4Xd4cUbiaQ3Eo
+    ports:
+      - "3002:3002"
+    

@@ -1,0 +1,29 @@
+{
+  "menuElements": [
+    {
+      "label": "About this docs",
+      "children": [
+        {
+          "label": "Getting started",
+          "component": "GettingStarted",
+          "subItems": []
+        },
+        {
+          "label": "How to start",
+          "component": "HowToStart",
+          "subItems": []
+        },
+        {
+          "label": "Add a tab on menu",
+          "component": "AddMenuTab",
+          "subItems": []
+        },
+        {
+          "label": "Add a page",
+          "component": "AddPage",
+          "subItems": []
+        }
+      ]
+    }
+  ]
+}
