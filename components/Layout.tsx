@@ -98,8 +98,8 @@ export default function ClippedDrawer({ menuElements, children, setSelectedCompo
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem onClick={handleSignIn}>Fazer login</MenuItem>
-      <MenuItem onClick={handleSignOut}>Sair</MenuItem>
+      <MenuItem onClick={handleSignIn}>Login</MenuItem>
+      <MenuItem onClick={handleSignOut}>Logout</MenuItem>
     </Menu>
   )
 
