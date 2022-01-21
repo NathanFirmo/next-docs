@@ -17,18 +17,18 @@ There are no limits. It was built on the Next.js so you can put you own componen
 ### HTTPS
 
 ~~~bash
-git clone https://github.com/NathanFirmo/icv-wiki.git
+git clone https://github.com/NathanFirmo/next-docs.git
 ~~~
 ### SSH
 
 ~~~bash
-git clone git@github.com:NathanFirmo/icv-wiki.git
+git clone git@github.com:NathanFirmo/next-docs.git
 ~~~
 
 ### GitHub CLI
 
 ~~~bash
-gh repo clone NathanFirmo/icv-wiki
+gh repo clone NathanFirmo/next-docs
 ~~~
 
 ## Install dependencies

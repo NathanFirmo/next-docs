@@ -74,7 +74,7 @@ export default function Home() {
             size='small'
             aria-label="edit"
             target='_blank'
-            href={`https://github.com/NathanFirmo/icv-wiki/blob/main/docs/${selectedComponent}.tsx`}
+            href={`https://github.com/NathanFirmo/next-docs/blob/main/docs/${selectedComponent}.tsx`}
           >
             <EditIcon />
           </Fab>
