@@ -6,6 +6,13 @@
 <img src='https://user-images.githubusercontent.com/79997705/150583736-12b0bb86-bd27-4f72-a4da-1d3566a29277.png' width='500px' heigth='850px'>
 </div>
 
+## Project idea
+This project came from the idea of having a simple but robust documentation template.
+This documentation supports everything you want.
+There are no limits. It's built on Next.js so you can place your own components.
+It supports authentication, Markdown, react and Typescript components. You have all the freedom to
+build your documentation the way you imagine it and still have the speed of writing in Markdown.
+
 ## Getting Started
 
 This project came from the idea of having a simple but robust documentation template. 

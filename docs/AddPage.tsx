@@ -75,8 +75,7 @@ import { MarkdownRender } from '../components'
 />
 ~~~
 `
-const message = `As images serão renderizadas na mesma ordem que estão
-no array de imagesProps.`
+const message = `The images will be rendered in the same order as they are in the imagesProps array.`
 export default function Template() {
 
   return (
