@@ -4,6 +4,7 @@ import rehypeRaw from 'rehype-raw'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import Image from '../molecules/Image'
 import { InfoAlert, WarningAlert } from '../../components'
+import MarkdownHandler from '../../lib/MarkdownHandler'
 
 interface Iprops {
   markdownText: string
@@ -12,16 +13,35 @@ interface Iprops {
 }
 
 export default function MarkdownRender({ markdownText, imagesProps, alertsProps }: Iprops) {
-  const markdownElements = markdownText.split('![image]')
-  let alertIndex = -1
+  const markdown = MarkdownHandler(markdownText)
+  let alertIndex = -1, imageIndex = -1
   return <>
     {
-      markdownElements.map((markdownElement, index) => {
-        if (markdownElement.includes('![alert]')) {
-          alertIndex++
-          const splitedElement = markdownElement.split('![alert]')
-          return <>
+      markdown.map((item: string, index: number) => {
+        if (item === '![alert]' && alertsProps && alertsProps[++alertIndex]) {
+          return (
+            alertsProps[alertIndex].type === 'info' ?
+              <InfoAlert 
+              key={`InfoAlert-${index}`}
+              message={alertsProps[alertIndex].message} /> :
+              <WarningAlert 
+              key={`WarnigngAlert-${index}`}
+              message={alertsProps[alertIndex].message} />
+          )
+        } else if (item === '![image]' && imagesProps && imagesProps[++imageIndex]) {
+          return (
+            <Image
+              key={`Image-${index}`}
+              src={imagesProps[imageIndex].src}
+              alt={imagesProps[imageIndex].alt}
+              width={imagesProps[imageIndex].width}
+              height={imagesProps[imageIndex].height}
+            />
+          )
+        } else {
+          return (
             <ReactMarkdown
+              key={`ReactMardown-${index}`}
               remarkPlugins={[remarkGfm]}
               rehypePlugins={[rehypeRaw]}
               components={{
@@ -43,86 +63,11 @@ export default function MarkdownRender({ markdownText, imagesProps, alertsProps 
                 },
               }}
             >
-              {splitedElement[0]}
+              {item}
             </ReactMarkdown>
-            {alertsProps && alertsProps[alertIndex] ?
-              (alertsProps[alertIndex].type === 'info' ?
-                <InfoAlert message={alertsProps[alertIndex].message} /> :
-                <WarningAlert message={alertsProps[alertIndex].message} />) :
-              null
-            }
-            <ReactMarkdown
-              remarkPlugins={[remarkGfm]}
-              rehypePlugins={[rehypeRaw]}
-              components={{
-                code({ node, inline, className, children, ...props }) {
-                  const match = /language-(\w+)/.exec(className || '')
-                  return !inline && match ? (
-                    <SyntaxHighlighter
-                      language={match[1]}
-                      PreTag="div"
-                      {...props}
-                    >
-                      {String(children).replace(/\n$/, '')}
-                    </SyntaxHighlighter>
-                  ) : (
-                    <code className={className} {...props}>
-                      {children}
-                    </code>
-                  )
-                },
-              }}
-            >
-              {splitedElement[1]}
-            </ReactMarkdown>
-            {alertsProps && alertsProps[++alertIndex] ?
-              (alertsProps[alertIndex].type === 'info' ?
-                <InfoAlert message={alertsProps[alertIndex].message} /> :
-                <WarningAlert message={alertsProps[alertIndex].message} />) :
-              null
-            }
-            {imagesProps && imagesProps[index] && <Image
-              src={imagesProps[index].src}
-              alt={imagesProps[index].alt}
-              width={imagesProps[index].width}
-              height={imagesProps[index].height}
-            />}
-          </>
+          )
         }
-        return <>
-          <ReactMarkdown
-            remarkPlugins={[remarkGfm]}
-            rehypePlugins={[rehypeRaw]}
-            components={{
-              code({ node, inline, className, children, ...props }) {
-                const match = /language-(\w+)/.exec(className || '')
-                return !inline && match ? (
-                  <SyntaxHighlighter
-                    language={match[1]}
-                    PreTag="div"
-                    {...props}
-                  >
-                    {String(children).replace(/\n$/, '')}
-                  </SyntaxHighlighter>
-                ) : (
-                  <code className={className} {...props}>
-                    {children}
-                  </code>
-                )
-              },
-            }}
-          >
-            {markdownElement}
-          </ReactMarkdown>
-          {imagesProps && imagesProps[index] && <Image
-            src={imagesProps[index].src}
-            alt={imagesProps[index].alt}
-            width={imagesProps[index].width}
-            height={imagesProps[index].height}
-          />}
-        </>
-      }
-      )
+      })
     }
   </>
 }
