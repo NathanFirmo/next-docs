@@ -7,9 +7,7 @@
     "go": "next build && next start",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "compose": "docker-compose up app",
-    "deploy": "git push && git checkout main && git merge development && git push && git checkout development"
+    "lint": "next lint"
   },
   "dependencies": {
     "@emotion/cache": "^11.4.0",
