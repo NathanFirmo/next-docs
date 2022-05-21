@@ -21,7 +21,7 @@ tab is '**Add a tab on menu**' and the component name is
       "children": [
         {
           "label": "Label",
-          "component": "ComponentName",
+          "component": "component-name",
           "subItems": []
         }
       ]

@@ -7,10 +7,6 @@ const markdown = `
 
 Create a copy of the file ***template.tsx*** inside the **pages** folder.
 
-## Export the created page
-
-Assuming your page name is ***'new-page.tsx'***.
-
 ## Put the text
 
 Just change the **markdown** variable, putting the text you want in it.
