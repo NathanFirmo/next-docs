@@ -5,16 +5,12 @@ const markdown = `
 
 ## Create the file
 
-Create a copy of the file ***docs/Template.tsx*** inside the **docs** folder.
+Create a copy of the file ***template.tsx*** inside the **pages** folder.
 
 ## Export the created page
 
-Assuming your page name is ***'NewPage.tsx'***, you should open the
-***'index.ts'*** file inside the **docs** folder and add the following line:
+Assuming your page name is ***'new-page.tsx'***.
 
-~~~js
-export { default as NewPage } from './NewPage'
-~~~
 ## Put the text
 
 Just change the **markdown** variable, putting the text you want in it.

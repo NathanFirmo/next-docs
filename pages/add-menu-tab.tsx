@@ -9,7 +9,7 @@ which is in the root of the project, so just change it to change the menu.
 This file has the structure shown below. For purposes of comparison, the name
 of the page group you are reading is '**About this docs**', the name of the
 tab is '**Add a tab on menu**' and the component name is
-'**AddMenuTab**'.
+'**add-menu-tab**'.
 
 ![alert]
 

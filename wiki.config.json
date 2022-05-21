@@ -5,22 +5,22 @@
       "children": [
         {
           "label": "Getting started",
-          "component": "GettingStarted",
+          "component": "/",
           "subItems": []
         },
         {
           "label": "How to start",
-          "component": "HowToStart",
+          "component": "how-to-start",
           "subItems": []
         },
         {
           "label": "Add a tab on menu",
-          "component": "AddMenuTab",
+          "component": "add-menu-tab",
           "subItems": []
         },
         {
           "label": "Add a page",
-          "component": "AddPage",
+          "component": "add-page",
           "subItems": []
         }
       ]
